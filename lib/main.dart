@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:metropolitanope/icons_metro_icons.dart';
+import 'package:metropolitanope/pages/buses.dart';
+import 'package:metropolitanope/pages/estaciones.dart';
 void main(){
   runApp(MaterialApp(
+    theme: ThemeData(fontFamily: 'Quicksand'),
     home: MetroHome(),
     ));
 }  
@@ -12,39 +15,46 @@ class  MetroHome extends StatefulWidget {
 }
 
 class _MetroHomeState extends State<MetroHome> {
- int _selectedIndex=1;
-final _widgetOptions=[
-  Text('Index 0: HOME'),
-  Text('Index 1: HOME'),
-  Text('Index 2: HOME')
-];
+  //static const Color transparent = Color(0x00000000);
+  int _currentIndex=0;
+  Widget callpage(int currentIndex){
+    switch (currentIndex) {
+      case 0:return Bus();
+        case 1: return Estacion();
+        case 2: return Estacion();
+        break;
+      default:return Bus();
+    }
+  }
+ 
   
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('home metropolitano'),
-      ),
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
-      ),
+    return Scaffold(   
+      
+      resizeToAvoidBottomInset: false,    
+      body: callpage(_currentIndex),
+      backgroundColor: Colors.white,
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
+        currentIndex:_currentIndex,
+        onTap: (value){
+          _currentIndex=value;
+            setState(() {
+              
+            });
+        },
+        items: [  
           BottomNavigationBarItem(icon: Icon(IconsMetro.bus),title:Text('Buses')),
-           BottomNavigationBarItem(icon: Icon(IconsMetro.location),title: Text('bussines')),
+           BottomNavigationBarItem(icon: Icon(IconsMetro.location),title: Text('Estaciones')),
             BottomNavigationBarItem(icon: Icon(Icons.school),title: Text('School')),
-
+ 
         ],
-        currentIndex: _selectedIndex,
-        fixedColor: Colors.deepPurple,
-        onTap: _onItemTapped,
+      
+        fixedColor: Colors.black,        
         backgroundColor: Colors.white,
       ),
     );
   }
-  void _onItemTapped(int index){
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+ 
+   
 }
