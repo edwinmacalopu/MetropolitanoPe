@@ -8,11 +8,13 @@ class  Estacion extends StatefulWidget {
 class _EstacionState extends State<Estacion> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Row(
-        children: <Widget>[
-          Text('holaestaciones')
-        ],
+    return Scaffold(
+      appBar: AppBar(        
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: Text('MetropolitanoPe',
+          style: TextStyle(color: Colors.black,fontSize: 25,fontFamily: 'Quicksand'),
+          )
       ),
     );
   }
