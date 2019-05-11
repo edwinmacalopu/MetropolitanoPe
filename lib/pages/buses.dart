@@ -135,7 +135,7 @@ return Positioned(
    }
  
    }
-     class Busdetalle extends StatefulWidget {
+  class Busdetalle extends StatefulWidget {
        final String detalle;
         Busdetalle({this.detalle});
      @override
@@ -143,44 +143,147 @@ return Positioned(
    }
    
    class _BusdetalleState extends State<Busdetalle> {
-
-     List<String> C=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion central"];
+final String someText = 
+"horarios\n"
+"L - V :5:20 am - 11:00 pm\n"
+"S :5:30 am - 10:55 pm\n"
+"D :5:25 am - 10:00 pm\n"
+;
+     List<String> C=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion Central","Estadio Nacional","México","Canada","Javier Prado","Canaval y Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
      @override
      Widget build(BuildContext context) {
+       double widths = MediaQuery.of(context).size.width;
        return Scaffold(
          appBar: AppBar(
            backgroundColor: Colors.blueAccent,
            elevation: 0,
            title: Text(this.widget.detalle),
          ),
-         body: Stack(
-           children: <Widget>[            
+         body: Container(                 
+           child:Stack(
+           children: <Widget>[  
              Container(
-               
-               height: 50,
-                color: Colors.yellow,
+               color:Color.fromARGB(-3, 245, 248, 254),  
              ),
-            ListView.builder(
-             itemCount: C.length,
-             itemBuilder: (context,index){                
-                return Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                   children: <Widget>[
-                     CircleAvatar(
-                       maxRadius: 5,
-                       backgroundColor: Colors.red,
-                     ),
-                     Text(C[index],style: TextStyle(fontSize: 15),),
-                   ],
-                 );
-                
-             },
-           ),
-          
+             builcabecera(),
+         builcard(widths),
+         builine(widths)
             
            ],
          ),
+         )
        );
      }
+      Widget builcabecera(){
+        return Container(
+            height:100,
+            color: Colors.blueAccent,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: <Widget>[
+                Column(                 
+                  children: <Widget>[
+                    Text('Norte a Sur',style: TextStyle(color: Colors.white),),
+                    Text('$someText',style: TextStyle(color: Colors.white),),
+                   
+                  ],
+                ),
+                 Column(
+                  children: <Widget>[
+                    Text('Sur a Norte',style: TextStyle(color: Colors.white),),
+                    Text('horarios',style: TextStyle(color: Colors.white),),
+                    Text('L - V :5:20 am - 11:00 pm',style: TextStyle(color: Colors.white),),
+                     Text('S :5:30 am - 10:55 pm',style: TextStyle(color: Colors.white),),
+                      Text('D :5:25 am - 10:00 pm',style: TextStyle(color: Colors.white),),
+                  ],
+                )
+              ],
+            ),
+            );
+      }
+
+      Widget builcard(widths){
+        return Positioned(
+          width: widths,
+          top: 80,
+          child: Column(          
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Container(
+                width: widths - 70,             
+             height: MediaQuery.of(context).size.height -150 ,
+              color: Colors.white,
+           child: ListView.builder(
+             itemCount: C.length,
+            itemBuilder: (context,index){
+              return Card(
+                elevation: 0,
+                child:Row(
+                  children: <Widget>[
+                    SizedBox(
+                      width: 14,
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Colors.blueAccent,
+                      radius: 7,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Column(
+                    children: <Widget>[
+                       Text('${C[index]}')
+                    ], 
+                                     
+                 
+                    ),
+                     SizedBox(
+                      height: 30,
+                    ),
+                  ],
+                ),
+                
+              );
+              
+            },
+           ),
+          
+          
+        )
+          ],
+        
+        ) ,
+        );
+      }
+
+      Widget builine(widths){
+        
+        return Positioned(
+          //width: widths -150,
+          top: 50,
+          
+          child: Align(
+        alignment:  Alignment.center,
+      
+        child: Column(  
+             
+          children: <Widget>[
+            SizedBox(
+              width: 120,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 2.0,
+          height: MediaQuery.of(context).size.height -150,
+          color:
+           Colors.blueAccent,
+            )
+          ],
+        ),
+        ),
+        );
+      }
+
    }
