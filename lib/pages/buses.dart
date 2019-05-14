@@ -137,19 +137,52 @@ return Positioned(
    }
   class Busdetalle extends StatefulWidget {
        final String detalle;
-        Busdetalle({this.detalle});
+        //Busdetalle({this.detalle});
+      Busdetalle({Key key, @required this.detalle}) : super(key: key);
+  
      @override
      _BusdetalleState createState() => _BusdetalleState();
+     
    }
    
    class _BusdetalleState extends State<Busdetalle> {
+   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    final String letrabus=this.widget.detalle;
+    switch(letrabus) {
+       case "A":
+       detallebus=["Narananjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caquetá","Castilla","Tacna","Jr de la Unión","Colmena","Est. Central"];
+       break;
+         case "B":
+         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central","México","Canadá","Javier Prado","Canaval Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+           break;
+         case "C":
+         detallebus=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion Central","Estadio Nacional","México","Canada","Javier Prado","Canaval y Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         break;
+          case "D":
+         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
+         break;
+         case "EX1":
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         break;
+
+       default:
+       detallebus=[""];
+     }
+  }
 final String someText = 
 "horarios\n"
 "L - V :5:20 am - 11:00 pm\n"
 "S :5:30 am - 10:55 pm\n"
 "D :5:25 am - 10:00 pm\n"
 ;
-     List<String> C=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion Central","Estadio Nacional","México","Canada","Javier Prado","Canaval y Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+     List<String> detallebus;
+     
+     
+     
+     
      @override
      Widget build(BuildContext context) {
        double widths = MediaQuery.of(context).size.width;
@@ -216,7 +249,7 @@ final String someText =
              height: MediaQuery.of(context).size.height -150 ,
               color: Colors.white,
            child: ListView.builder(
-             itemCount: C.length,
+             itemCount: detallebus.length,
             itemBuilder: (context,index){
               return Card(
                 elevation: 0,
@@ -234,7 +267,7 @@ final String someText =
                     ),
                     Column(
                     children: <Widget>[
-                       Text('${C[index]}')
+                       Text('${detallebus[index]}')
                     ], 
                                      
                  

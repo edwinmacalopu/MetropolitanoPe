@@ -22,6 +22,7 @@ class _MetroHomeState extends State<MetroHome> {
       case 0:return Bus();
         case 1: return Estacion();
         case 2: return Estacion();
+        //case 3: return Estacion();
         break;
       default:return Bus();
     }
@@ -47,7 +48,7 @@ class _MetroHomeState extends State<MetroHome> {
           BottomNavigationBarItem(icon: Icon(IconsMetro.bus),title:Text('Buses')),
            BottomNavigationBarItem(icon: Icon(IconsMetro.location),title: Text('Estaciones')),
             BottomNavigationBarItem(icon: Icon(Icons.school),title: Text('School')),
- 
+             //BottomNavigationBarItem(icon: Icon(Icons.search),title: Text('busqueda')),
         ],
       
         fixedColor: Colors.black,        
