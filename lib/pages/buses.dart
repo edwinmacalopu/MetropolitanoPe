@@ -8,7 +8,7 @@ class  Bus extends StatefulWidget {
 
 class _BusState extends State<Bus> {
 
-List<String> bustitle=["A","B","C","D","EX1","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9","Sx","SXN","","",""];
+List<String> bustitle=["A","B","C","D","EX1 mañana","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9","Sx","SXN","","",""];
 List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","","",""];
 List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Bneavides","Naranjal - Ricardo Palma","Naranjal - Est. Central","","",""];
   @override
@@ -20,7 +20,7 @@ List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini
         backgroundColor: Colors.blueAccent,
         elevation: 0,
         title: Text('MetropolitanoPe',
-          style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: 'Quicksand'),
+          style: TextStyle(color: Colors.white,fontSize: 20,fontFamily: 'SourceSansPro-Bold'),
           )
       ),
       body:Container(        
@@ -147,8 +147,7 @@ return Positioned(
    
    class _BusdetalleState extends State<Busdetalle> {
    @override
-  void initState() {
-    // TODO: implement initState
+  void initState() { 
     super.initState();
     final String letrabus=this.widget.detalle;
     switch(letrabus) {
@@ -162,7 +161,34 @@ return Positioned(
          detallebus=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion Central","Estadio Nacional","México","Canada","Javier Prado","Canaval y Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
          break;
           case "D":
-         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
+         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jazmines","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
+         break;
+         case "EX1 mañana":
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         break;
+
+       default:
+       detallebus=[""];
+     }
+  }
+String textobotton="Norte a Sur";
+  void cambiartextobotton(){
+    setState(() {
+     if (textobotton=="Norte a Sur"){
+          textobotton="Sur a Norte";
+           final String letrabusur=this.widget.detalle;
+    switch(letrabusur) {
+       case "A":
+       detallebus=["Est. Central","Colmena","Jr de la Unión","Tacna","Castilla","Caquetá","Parque del Trabajo","UNI","Honorio Delgado","El Milagro","Tomás Valle","Los Jasminez","Independencia","Pacífico","Izaguirre","Narananjal"];
+       break;
+         case "B":
+         detallebus=["Matellini","Rosario de Villa","Terán","Escuela Militar","Estadio Unión","Bulevar","Balta","Plaza de Flores","28 de Julio","Benavides","Ricardo Palma","Angamos","Domingo Orué","Aramburú","Canaval Moreyra","Javier Prado","Canadá","México","Estadio Nacional","Est. Central","España","Quilca","Dos de Mayo","Caqueta","Parque del Trabajo","UNI","Honorio Delgado","El Milagro","Tomás Valle","Los Jasminez","Independencia","Pacífico","Izaguirre","Naranjal"];
+           break;
+         case "C":
+         detallebus=["Matellini","Rosario de Villa","Terán","Escuela Militar","Estadio Unión","Bulevar","Balta","Plaza de Flores","28 de Julio","Benavides","Ricardo Palma","Angamos","Domingo Orué","Aramburú","Canaval Moreyra","Javier Prado","Canadá","México","Estadio Nacional","Est. Central","Colmena","Jirón de la Unión","Tacna","Ramón Castilla"];
+         break;
+          case "D":
+         detallebus=["Est. Central","España","Quilca","2 de Mayo","Caquetá","Parque del Trabajo","UNI","Honorio Delgado","El Milagro","Tomás Valle","Los Jazmines","Independencia","Pacífico","Izaguirre","Naranjal"];
          break;
          case "EX1":
          detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
@@ -171,17 +197,36 @@ return Positioned(
        default:
        detallebus=[""];
      }
+     }else{
+       textobotton="Norte a Sur";
+        final String letrabusurs=this.widget.detalle;
+       switch(letrabusurs) {
+       case "A":
+       detallebus=["Narananjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caquetá","Castilla","Tacna","Jr de la Unión","Colmena","Est. Central"];
+       break;
+         case "B":
+         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central","México","Canadá","Javier Prado","Canaval Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+           break;
+         case "C":
+         detallebus=["Ramon Castilla","Tacna","Jiron de la Union","Colmena","Estacion Central","Estadio Nacional","México","Canada","Javier Prado","Canaval y Moreyra","Aramburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         break;
+          case "D":
+         detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jazmines","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
+         break;
+         case "EX1":
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         break;
+
+       default:
+       detallebus=[""];
+     }
+     }
+
+    });
   }
-final String someText = 
-"horarios\n"
-"L - V :5:20 am - 11:00 pm\n"
-"S :5:30 am - 10:55 pm\n"
-"D :5:25 am - 10:00 pm\n"
-;
-     List<String> detallebus;
-     
-     
-     
+  
+
+     List<String> detallebus;     
      
      @override
      Widget build(BuildContext context) {
@@ -200,8 +245,8 @@ final String someText =
              ),
              builcabecera(),
          builcard(widths),
-         builine(widths)
-            
+         builine(widths),
+            botonswitch(),
            ],
          ),
          )
@@ -209,44 +254,24 @@ final String someText =
      }
       Widget builcabecera(){
         return Container(
+          
             height:100,
             color: Colors.blueAccent,
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                Column(                 
-                  children: <Widget>[
-                    Text('Norte a Sur',style: TextStyle(color: Colors.white),),
-                    Text('$someText',style: TextStyle(color: Colors.white),),
-                   
-                  ],
-                ),
-                 Column(
-                  children: <Widget>[
-                    Text('Sur a Norte',style: TextStyle(color: Colors.white),),
-                    Text('horarios',style: TextStyle(color: Colors.white),),
-                    Text('L - V :5:20 am - 11:00 pm',style: TextStyle(color: Colors.white),),
-                     Text('S :5:30 am - 10:55 pm',style: TextStyle(color: Colors.white),),
-                      Text('D :5:25 am - 10:00 pm',style: TextStyle(color: Colors.white),),
-                  ],
-                )
-              ],
-            ),
+            
             );
       }
 
       Widget builcard(widths){
         return Positioned(
-          width: widths,
-          top: 80,
+          width: widths,          
+          top: 30,
           child: Column(          
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
                 width: widths - 70,             
-             height: MediaQuery.of(context).size.height -150 ,
+             height: MediaQuery.of(context).size.height -180 ,
               color: Colors.white,
            child: ListView.builder(
              itemCount: detallebus.length,
@@ -267,7 +292,8 @@ final String someText =
                     ),
                     Column(
                     children: <Widget>[
-                       Text('${detallebus[index]}')
+                       Text('${detallebus[index]}',
+                       style:TextStyle(fontSize: 17),)
                     ], 
                                      
                  
@@ -291,17 +317,13 @@ final String someText =
         );
       }
 
-      Widget builine(widths){
-        
+      Widget builine(widths){        
         return Positioned(
           //width: widths -150,
-          top: 50,
-          
+          top: 30,          
           child: Align(
-        alignment:  Alignment.center,
-      
-        child: Column(  
-             
+        alignment:  Alignment.center,      
+        child: Column(               
           children: <Widget>[
             SizedBox(
               width: 120,
@@ -309,13 +331,43 @@ final String someText =
             Container(
               alignment: Alignment.center,
               width: 2.0,
-          height: MediaQuery.of(context).size.height -150,
+          height: MediaQuery.of(context).size.height -180,
           color:
            Colors.blueAccent,
             )
           ],
         ),
         ),
+        );
+      }
+
+      Widget botonswitch(){
+        return Positioned(          
+          width: MediaQuery.of(context).size.width,
+              bottom: 5,
+              child: Container(
+                alignment: Alignment.center,
+                child: Column(     
+                               
+                  children: <Widget>[
+                    
+                    RaisedButton(
+                      
+                  color: Colors.blueAccent,
+                  onPressed: (){
+                    cambiartextobotton();
+
+                  },
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  child: Text(
+                    '$textobotton',style: TextStyle(color: Colors.white,fontSize: 20)
+                    
+                  ),
+                )
+                  ],
+                ),
+                 
+              ),
         );
       }
 

@@ -43,9 +43,10 @@ flutter:
     - family:  IconsMetro
       fonts:
        - asset: fonts/IconsMetro.ttf
-    - family: Quicksand
+    - family: SourceSansPro
       fonts:
-       - asset: fonts/QuicksandFamily/Quicksand_Bold.otf
+       - asset: fonts/SourceSansPro/SourceSansPro-Regular.ttf
+       - asset: fonts/SourceSansPro/SourceSansPro-Bold.ttf
   # To add assets to your application, add an assets section, like this:
   assets:
    - images/bus.png
