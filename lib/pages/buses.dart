@@ -8,9 +8,9 @@ class  Bus extends StatefulWidget {
 
 class _BusState extends State<Bus> {
 
-List<String> bustitle=["A","B","C","D","EX1 mañana","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9","Sx","SXN","","",""];
-List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","","",""];
-List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Bneavides","Naranjal - Ricardo Palma","Naranjal - Est. Central","","",""];
+List<String> bustitle=["A","B","C","D","EX1 mañana","EX1 Tarde","EX2","EX3","EX4","EX5","EX6","EX7","EX8","EX9","Sx","SXN","","",""];
+List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","","",""];
+List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Bneavides","Naranjal - Ricardo Palma","Naranjal - Est. Central","","",""];
   @override
   Widget build(BuildContext context) {      
     double width = MediaQuery.of(context).size.width;
@@ -164,9 +164,11 @@ return Positioned(
          detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jazmines","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
          break;
          case "EX1 mañana":
-         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval y Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
          break;
-
+         case "EX1 Tarde":
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval y Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+          break;
        default:
        detallebus=[""];
      }
@@ -190,9 +192,12 @@ String textobotton="Norte a Sur";
           case "D":
          detallebus=["Est. Central","España","Quilca","2 de Mayo","Caquetá","Parque del Trabajo","UNI","Honorio Delgado","El Milagro","Tomás Valle","Los Jazmines","Independencia","Pacífico","Izaguirre","Naranjal"];
          break;
-         case "EX1":
-         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+         case "EX1 mañana":
+         detallebus=["Matellini","Rosario de Villa","Terán","Escuela Militar","Estadio Unión","Bulevar","Balta","28 de Julio","Angamos","Canaval y Moreyna","Javier Prado","Estadio Nacional","Est. Central"];
          break;
+         case "EX1 Tarde":
+         detallebus=["Matellini","Rosario de Villa","Terán","Escuela Militar","Estadio Unión","Bulevar","Balta","28 de Julio","Ricardo Palma","Angamos","Javier Prado","Estadio Nacional","Est. Central"];
+          break;
 
        default:
        detallebus=[""];
@@ -213,9 +218,12 @@ String textobotton="Norte a Sur";
           case "D":
          detallebus=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jazmines","Tomás Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caqueta","Dos de Mayo","Quilca","España","Est. Central"];
          break;
-         case "EX1":
+         case "EX1 mañana":
          detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
          break;
+         case "EX1 Tarde":
+         detallebus=["Est. Central","Estadio Nacional","Javier Prado","Canaval y Moreyra","Angamos","Ricardo Palma","28 de Julio","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
+          break;
 
        default:
        detallebus=[""];
