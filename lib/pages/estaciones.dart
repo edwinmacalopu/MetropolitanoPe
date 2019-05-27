@@ -6,7 +6,7 @@ class  Estacion extends StatefulWidget {
 }
 
 class _EstacionState extends State<Estacion> {
-  List<String> estaciones=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomas Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caquetá","Dos de Mayo","Quilca","España","Estación Central","Estadio Nacional","México","Canadá","Javier Prado","Canaval y Moreyra","Aramaburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores"];
+  List<String> estaciones=["Naranjal","Izaguirre","Pacífico","Independencia","Los Jasminez","Tomas Valle","El Milagro","Honorio Delgado","UNI","Parque del Trabajo","Caquetá","Dos de Mayo","Quilca","España","Estación Central","Estadio Nacional","México","Canadá","Javier Prado","Canaval y Moreyra","Aramaburú","Domingo Orué","Angamos","Ricardo Palma","Benavides","28 de Julio","Plaza de Flores","Balta","Bulevar","Estadio Unión","Escuela Militar","Terán","Rosario de Villa","Matellini"];
 //List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","","",""];
 //List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Bneavides","Naranjal - Ricardo Palma","Naranjal - Est. Central","","",""];
   @override
@@ -67,9 +67,10 @@ return Positioned(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[                  
                       Container( 
+                        height: MediaQuery.of(context).size.height -220 ,
                         width: width - 70,
                    color: Color(0x00000000),                
-                  height: MediaQuery.of(context).size.height,
+                 // height: MediaQuery.of(context).size.height,
                       child: ListView.builder(                        
                         itemCount: estaciones.length,
                         itemBuilder: (context,index){                          
