@@ -8,10 +8,10 @@ class  Bus extends StatefulWidget {
 
 class _BusState extends State<Bus> {
 
-List<String> bustitle=["A","B","C","D","EX1","EX1","EX2","EX2","EX3","EX3","EX4","EX7","EX8","EX9","Sx","SXN","","",""];
-List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Mañana","Tarde","Mañana","Tarde","Mañana - L a V","Tarde - L a V","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","","",""];
-List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Bneavides","Naranjal - Ricardo Palma","Naranjal - Est. Central","","",""];
-List<String> codbus=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16"]; 
+List<String> bustitle=["A","B","C","D","EX1","EX1","EX2","EX2","EX3","EX3","EX4","EX5","EX6","EX7","EX8","SX9","SX","SX","SXN","SXN"];
+List<String> horarios=["Lunes a Domingos","Lunes a Domingos","Lunes a Domingos","Lunes a Viernes","Mañana","Tarde","Mañana","Tarde","Mañana - L a V","Tarde - L a V","Solo Sabados","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Lunes a Viernes","Mañana","Tarde","Mañana","Tarde"];
+List<String> desdea=["Naranjal - Est. Central","Naranjal - Matellini","Matellini - R. Castilla","Naranjal - Est. Central","Est. Central - Matellini","Est. Central - Matellini","Naranjal - 28 de Julio","Naranjal - 28 de Julio","Naranjal - Plaza Flores","Naranjal - Plaza Flores","Izaguirre - Benavides","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Tomás Valle - Angamos","Izaguirre - Plaza Flores","Uni - Benavides","Naranjal - Ricardo Palma","Aramburú - Naranjal","Naranjal - Est. Central","Naranjal - Est. Central"];
+List<String> codbus=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]; 
   @override
   Widget build(BuildContext context) {      
     double width = MediaQuery.of(context).size.width;
@@ -63,21 +63,23 @@ List<String> codbus=["1","2","3","4","5","6","7","8","9","10","11","12","13","14
 
    Widget _contenido(width){
 return Positioned(
-               width:  width,             
+               width:  width,
+               //bottom: 5,             
                 top: 80,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[                  
                       Container( 
+                         height: MediaQuery.of(context).size.height -220 ,
                         width: width - 70,
                    color: Color(0x00000000),                
-                  height: MediaQuery.of(context).size.height,
+                  //height: MediaQuery.of(context).size.height,
                       child: ListView.builder(                        
                         itemCount: bustitle.length,
                         itemBuilder: (context,index){                          
                           return Container(   
-                            
+                             //height: MediaQuery.of(context).size.height -180 ,
                             child:GestureDetector(                                                                                                 
                             child: Card(                            
                               child:Row(
@@ -99,6 +101,7 @@ return Positioned(
                                     width: 50,
                                   ),
                                   Container(
+                                    
                                      height: 70,
                                     child:  Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -186,6 +189,33 @@ return Positioned(
              case "11":
          detallebus=["Naranjal","Izaguirre","Tomás Valle","UNI","Caquetá","2 de Mayo","España","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Plaza Flores"];
           break;
+          case "12":
+         detallebus=["Naranjal","Idependecia","Tomás Valle","UNI","España","Est. Central","Canadá","Javier Prado","Canaval y Moreyra","Angamos","Ricardo Palma","Plaza Flores"];
+          break;
+            case "13":
+         detallebus=["Izaguirre","Independencia","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Benavides"];
+          break;
+           case "14":
+         detallebus=["Tomás Valle","Est. Central","Javier Prado","Canaval y Moreyra","Angamos"];
+          break;
+          case "15":
+         detallebus=["Izaguirre","Independencia","tomás Valle","UNI","Caquetá","España","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Benavides","Plaza Flores"];
+          break;
+           case "16":
+         detallebus=["UNI","Caquetá","Canadá","Canaval y Moreyra","Angamos","Benavides"];
+          break;
+          case "17":
+         detallebus=["Naranjal","Canaval y Moreyra","Aramburú","Ricardo Palma"];
+          break;
+           case "18":
+         detallebus=["solo de sur a norte"];
+          break;
+          case "19":
+         detallebus=["Naranjal","2 de Mayo","Quilca","España","Est. Central"];
+          break;
+          case "20":
+         detallebus=["Naranjal","Est. Central"];
+          break;
        default:
        detallebus=[""];
      }
@@ -230,8 +260,33 @@ String textobotton="Norte a Sur";
           case "11":
          detallebus=["Plaza Flores","Angamos","Canaval y Moreyra","Javier Prado","Est. Central","España","2 de mayo","Caquetá","UNI","Tomás Valle","Izaguirre","Naranjal"];
           break;
-          
-
+           case "12":
+         detallebus=["Plaza Flores","Ricardo Palma","Angamos","Canaval y Moreyra","Javier Prado","Canadá","Est. Central","España","Caqueta","UNI","Honorio Delgado","Tomás Valle","Independencia","Naranjal"];
+          break;
+            case "13":
+         detallebus=["solo de norte a sur"];
+          break;
+           case "14":
+         detallebus=["solo de norte a sur"];         
+          break;
+           case "15":
+         detallebus=["Plaza Flores","Benavides","Angamos","Canaval y Moreyra","Javier Prado","Est. Central","España","Caquetá","UNI","Tomás Valle","Insdependencia","Izaguirre"];         
+          break;
+          case "16":
+         detallebus=["solo de norte a sur"];
+          break;
+          case "17":
+         detallebus=["solo de norte a sur"];
+          break;
+          case "18":
+         detallebus=["Aramburú","Canaval y Moreyra","Naranjal"];
+          break;
+          case "19":
+         detallebus=["Est. Central","Naranjal"];
+          break;
+           case "20":
+         detallebus=["Est. Central","España","Quilca","2 de Mayo","Naranjal"];
+          break;
        default:
        detallebus=[""];
      }
@@ -271,6 +326,33 @@ String textobotton="Norte a Sur";
           break;
             case "11":
          detallebus=["Naranjal","Izaguirre","Tomás Valle","UNI","Caquetá","2 de Mayo","España","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Plaza Flores"];
+          break;
+           case "12":
+         detallebus=["Naranjal","Idependecia","Tomás Valle","UNI","España","Est. Central","Canadá","Javier Prado","Canaval y Moreyra","Angamos","Ricardo Palma","Plaza Flores"];
+          break;
+           case "13":
+         detallebus=["Izaguirre","Independencia","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Benavides"];
+          break;
+           case "14":
+         detallebus=["Tomás Valle","Est. Central","Javier Prado","Canaval y Moreyra","Angamos"];
+          break;
+           case "15":
+         detallebus=["Izaguirre","Independencia","tomás Valle","UNI","Caquetá","España","Est. Central","Javier Prado","Canaval y Moreyra","Angamos","Benavides","Plaza Flores"];
+          break;
+          case "16":
+         detallebus=["UNI","Caquetá","Canadá","Canaval y Moreyra","Angamos","Benavides"];
+          break;
+          case "17":
+         detallebus=["Naranjal","Canaval y Moreyra","Aramburú","Ricardo Palma"];
+          break;
+          case "18":
+         detallebus=["solo de sur a norte"];
+          break;
+          case "19":
+         detallebus=["Naranjal","2 de Mayo","Quilca","España","Est. Central"];
+          break;
+           case "20":
+         detallebus=["Naranjal","Est. Central"];
           break;
        default:
        detallebus=[""];
