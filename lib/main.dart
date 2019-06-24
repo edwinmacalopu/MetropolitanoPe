@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:metropolitanope/icons_metro_icons.dart';
 import 'package:metropolitanope/pages/buses.dart';
+import 'package:metropolitanope/pages/busqueda.dart';
 import 'package:metropolitanope/pages/estaciones.dart';
 void main(){
   runApp(MaterialApp(
@@ -21,7 +22,7 @@ class _MetroHomeState extends State<MetroHome> {
     switch (currentIndex) {
       case 0:return Bus();
         case 1: return Estacion();
-        case 2: return Estacion();
+        case 2: return Busqueda();
         //case 3: return Estacion();
         break;
       default:return Bus();
@@ -47,7 +48,7 @@ class _MetroHomeState extends State<MetroHome> {
         items: [  
           BottomNavigationBarItem(icon: Icon(IconsMetro.bus),title:Text('Buses')),
            BottomNavigationBarItem(icon: Icon(IconsMetro.location),title: Text('Estaciones')),
-            BottomNavigationBarItem(icon: Icon(Icons.school),title: Text('School')),
+            BottomNavigationBarItem(icon: Icon(Icons.search),title: Text('Buscar')),
              //BottomNavigationBarItem(icon: Icon(Icons.search),title: Text('busqueda')),
         ],
       
